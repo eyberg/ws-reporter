@@ -12,13 +12,11 @@ function doit(ws) {
   var outd = '';
 
   vhosts.stdout.on("data", function (data) {
-    //json.stringify(data);
     ws.write("{\"vhosts\" : \"" + escape(data) + "\"}");
     sys.puts(data);
   });
 
   error.stdout.on("data", function (data) {
-    //json.stringify(data);
     ws.write("{\"error\" : \"" + escape(data) + "\"}");
     sys.puts(data);
   });
