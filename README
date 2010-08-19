@@ -1,1 +1,25 @@
-what is this?
+ws-reporter is just a PoC to show how powerful web sockets are
+and how easy it is to make simple little utilities for server-side
+monitoring through node.js and friends
+
+for testing you can run this under any webserver -- I just threw
+up an apache vhost like so (since we are monitoring apache log files):
+
+Listen 99
+
+# ....
+
+<VirtualHost 127.0.0.1:99>
+  ServerName 127.0.0.1
+  DocumentRoot /home/feydr/random-hacking/ws-reporter/
+</VirtualHost>
+
+
+you'll want a browser that supports web sockets -- I highly
+recommend the latest version of chrome (really, you can use ie6
+with gimite's web socket (flash socket fallback) stuff)
+
+
+so yes, http://mnutt.github.com/hummingbird/ was the major
+inspiration and no, I'm not using it for anything particular but
+seriously, this shit is slightly sick ... use web sockets, use node.js
