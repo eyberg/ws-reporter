@@ -1,0 +1,46 @@
+<html>
+<body>
+<link href='/screen.css' rel='stylesheet' type='text/css' /> 
+
+<script src='/jquery.js'></script> 
+
+<script>
+
+var conn;
+var connect = function() {
+  if (window["WebSocket"]) {
+    conn = new WebSocket("ws://127.0.0.1:8081");
+    conn.onmessage = function(evt) {
+     data = $.parseJSON(evt.data);
+
+      if(data.vhosts != null) {
+        $('#vhostslog').append("<div class=logline>" + unescape(data.vhosts) + "</div>");
+      }
+
+      if(data.error != null) {
+        $('#errorlog').append("<div class=logline>" + unescape(data.error) + "</div>");
+      }
+
+    };
+  }
+};
+
+window.onload = connect;
+
+</script>
+</body>
+
+<center><span class="header">Reporter</span></center>
+
+<ul class="menu">
+  <li onclick="$('.log').hide(); $('#vhostslog').show();">Other Vhosts</li>
+  <li onclick="$('.log').hide(); $('#errorlog').show();">Error Log</li>
+</ul>
+
+<div id="vhostslog" style="display: none;" class="log">
+</div>
+
+<div id="errorlog" style="display: none;" class="log">
+</div>
+
+</html>

@@ -1,0 +1,38 @@
+html {
+  background-color: #000;
+  color: #fff;
+}
+
+.menu li {
+  border: 1px solid #eee;
+  padding: 5px;
+  list-style: none;
+  display: inline;
+  background-color: #000;
+  cursor: pointer;
+}
+
+.menu li:hover {
+  background-color: #164b35;
+}
+
+.header {
+  font-weight: bold;
+  text-align: center;
+  font-size: 25px;
+}
+
+.log {
+  font-weight: bold;
+  font-size: 15px;
+  color: #b8c000;
+  background-color: #000;
+}
+
+.logline {
+  border: 1px dashed #ccc;
+}
+
+.logline:hover {
+  background-color: #164b35;
+}
